@@ -5,16 +5,18 @@ import VideoPlayer from "react-background-video-player";
 import Video from "../secone/videos/Book_of_Gates.mp4";
 import "./secone.css";
 import { makeStyles } from "@material-ui/core";
+import { height } from "@mui/system";
+
 const styles = makeStyles(() => ({
   grid: {
-    display: "flex",
+    display: "flex",  
     height: "100vh",
 
     // width: "100% auto",
   },
   video: {
-    width: "500px auto",
-    height: "500px auto",
+    maxWidth: "100%",
+    height: " auto",
   },
 }));
 function Secone() {
@@ -22,33 +24,19 @@ function Secone() {
   return (
     <Grid
       item
-      className={classes.grid}
+      className=""
       xs={12}
       sm={12}
       lg={12}
       md={12}
+      style={{marginTop: "77px",marginBottom: "-40px"}}
       id="home"
     >
-      {/* <video
-        autoPlay
-        loop
-        muted
-        className="vedio"
-        style={{
-          position: "absolute",
-          width: "100%",
-          left: "50%",
-          top: "50%",
-          height: "110%",
-          // objectFit: "fill",
-          objectFit: "cover",
-          transform: "translate(-50%, -50% )",
-          zIndex: "-1",
-        }}
-      >
-        <source src={Video} type="video/mp4" />
-      </video> */}
-      <VideoPlayer className="video" src={Video} width={500} />
+    
+     <video autoPlay loop muted className="w-100 h-100" style={{width: "100%", height: "100%"}} sm={{height: "55vh"}}>
+      <source src="https://skywalker.infura-ipfs.io/ipfs/QmRxMJugqqa8tLhocesT8aJGqHgpBDuDirwNi6iCiyvv11" type="video/mp4" />
+     </video>
+      {/* <VideoPlayer className="video" src={Video} disableBackgroundCover={false} playsInline={false}  styles={{width: "50%", height: "auto", left: "0px"}}/> */}
       {/* <Video src={video}/> */}
     </Grid>
   );
